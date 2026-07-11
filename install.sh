@@ -300,6 +300,7 @@ cp "$REPO_DIR/cava/config" config
 # 98. cava {after 5 seconds close the terminal}
 echo "Automating Step 98: Initializing Cava for 5 seconds..."
 timeout 5 cava
+stty sane || reset
 
 # 99. mkdir ~/.cache/wal/
 mkdir -p ~/.cache/wal/

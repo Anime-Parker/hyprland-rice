@@ -1,1 +1,177 @@
+local mainMod = "SUPER"
+hl.bind(mainMod .. "+" .. " G", function()
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+    hl.exec_cmd("hyprctl dispatch resizeactive exact 70% 70%")
+    hl.dispatch(hl.dsp.window.center())
+end)
+
+
+hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
+
+hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wppicker.sh"))
+
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
+
+hl.bind(mainMod .. " + " .. "S", hl.dsp.exec_cmd("hyprshot -m active -m output -o ~/Pictures/screenshots/ eDP-1"))
+
+hl.bind(mainMod .. " + " .. "L", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprlock.sh"))
+
+hl.bind(mainMod .. " + " .. "period", hl.dsp.exec_cmd("wofi-emoji"))
+
+hl.bind("ALT" .. " + " .. "W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wbrestart.sh"))
+
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/KillActiveProcess.sh"))
+
+hl.bind(mainMod .. "+"  ..  "ALT" .. " + " .. "W", hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarLayout.sh"))
+
+
+-- Kill active process
+
+hl.bind("ALT" .. " + " .. "Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+
+hl.bind("ALT + SHIFT" .. " + " .. "Tab", hl.dsp.exec_cmd("snappy-switcher prev"))
+
+-- Add this to hyprland.conf if you haven't already
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 1,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 2,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 3,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 4,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 5,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 6,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 7,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 8,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 9,
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name  = "float",
+    match = {
+        class = "^(hypr-persistent)$",
+        workspace = 10,
+    },
+    float = true,
+})
+hl.window_rule({
+    name  = "opacity_0_0_override",
+    match = {
+        class = "^(xwaylandvideobridge)$",
+    },
+    opacity = "0.0 override 0.0 override",
+})
+
+hl.window_rule({
+    name  = "prop_noanim",
+    match = {
+        class = "^(xwaylandvideobridge)$",
+    },
+    -- TODO: review rule: "prop noanim"
+})
+
+hl.window_rule({
+    name  = "noinitialfocus",
+    match = {
+        class = "^(xwaylandvideobridge)$",
+    },
+    no_initial_focus = true,
+})
+
+hl.window_rule({
+    name  = "maxsize_1_1",
+    match = {
+        class = "^(xwaylandvideobridge)$",
+    },
+    max_size = "1 1",
+})
+
+hl.window_rule({
+    name  = "prop_noblur",
+    match = {
+        class = "^(xwaylandvideobridge)$",
+    },
+    -- TODO: review rule: "prop noblur"
+})
+
+-- --- Static/Persistent Workspaces 1-10 ---
+
+-- Scroll through existing workspaces with mainMod + scroll
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+
+hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
+
+hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+
+
+
 

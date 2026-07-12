@@ -26,13 +26,13 @@ prompt_user() {
 echo "Starting EndeavourOS Ricing Script (Strict 1-to-1 Execution)..."
 
 # 1. sudo pacman -Syu
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 # 2. sudo pacman -S hyprland hyprlock awww matugen fish kitty rofi waybar tree nautilus fast fetch -noconfirm
 sudo pacman -S hyprland hyprlock awww matugen fish kitty rofi waybar tree nautilus fastfetch --noconfirm
 
 # 3. yay -S nmgui-bin [Clean Build (no)]
-yay -S nmgui-bin
+yay -S nmgui-bin --noconfirm --answerclean no --answerdiff none
 
 # 4. chsh -s /usr/bin/fish
 chsh -s /usr/bin/fish
@@ -40,15 +40,15 @@ chsh -s /usr/bin/fish
 # 5, 6, 7. Hyprland initialization
 prompt_user "STEPS 5, 6, & 7:\n1. Type 'Hyprland' in this terminal.\n2. Press SUPER+M to exit.\n3. Type 'start-hyprland' and exit again."
 
-# 8. Apply Hyprland.lua
+# 8. Apply hyprland.lua
 mkdir -p ~/.config/hypr/
-cp "$REPO_DIR/Hyprland.lua/Revision 1" ~/.config/hypr/Hyprland.lua
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 1" ~/.config/hypr/hyprland.lua
 
 # 9. sudo pacman -S btop(resources monitor)
-sudo pacman -S btop
+sudo pacman -S btop --noconfirm
 
 # 10. sudo pacman -S cava(audio visualizer)
-sudo pacman -S cava
+sudo pacman -S cava --noconfirm
 
 # 11. cd ~/.config/hypr/
 cd ~/.config/hypr/ || exit
@@ -81,34 +81,33 @@ cd scripts || exit
 touch hyprplugins.lua
 
 # Returning to repo for installations
-cd "$REPO_DIR" || exit
+cd "$HOME/hyprland-rice" || exit
 
 # 25. yay -S sublime-text {followed by 1, followed by no if asked for clean build}
-yay -S sublime-text
-
+yay -S sublime-text --noconfirm --answerclean no --answerdiff none
 # 26. sudo pacman -S hypridle
-sudo pacman -S hypridle
+sudo pacman -S hypridle --noconfirm
 
-# 27. Apply Hyprland.lua Revision 1
-cp "$REPO_DIR/Hyprland.lua/Revision 1" ~/.config/hypr/Hyprland.lua
+# 27. Apply hyprland.lua Revision 1
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 1" ~/.config/hypr/hyprland.lua 
 
 # 28. Apply Hypridle.conf
-cp "$REPO_DIR/hypr/scripts/Hypridle.conf" ~/.config/hypr/hypridle.conf
+cp "$HOME/hyprland-rice/hypr/scripts/Hypridle.conf" ~/.config/hypr/hypridle.conf
 
 # 29. sudo pacman -S brightnessctl
-sudo pacman -S brightnessctl
+sudo pacman -S brightnessctl --noconfirm
 
 # 30. Apply Hyprlock.conf
-cp "$REPO_DIR/hypr/scripts/Hyprlock.conf" ~/.config/hypr/hyprlock.conf
+cp "$HOME/hyprland-rice/hypr/scripts/Hyprlock.conf" ~/.config/hypr/hyprlock.conf
 
 # 31. Apply configs/keybinds
-cp "$REPO_DIR/hypr/configs/keybinds" ~/.config/hypr/configs/keybinds.lua
+cp "$HOME/hyprland-rice/hypr/configs/keybinds" ~/.config/hypr/configs/keybinds.lua
 
 # 32. Apply scripts/screenshot.sh
-cp "$REPO_DIR/hypr/scripts/screenshot.sh" ~/.config/hypr/scripts/screenshot.sh
+cp "$HOME/hyprland-rice/hypr/scripts/screenshot.sh" ~/.config/hypr/scripts/screenshot.sh
 
 # 33. sudo pacman -S hyprshot
-sudo pacman -S hyprshot
+sudo pacman -S hyprshot --noconfirm
 
 # 34. mkdir ~/Pictures
 mkdir -p ~/Pictures
@@ -125,8 +124,8 @@ cd ~/.config/hypr/scripts/ || exit
 # 38. chmod +x screenshot.sh
 chmod +x screenshot.sh
 
-# 39. Apply Hyprland.lua Revision 2
-cp "$REPO_DIR/Hyprland.lua/Revision 2" ~/.config/hypr/Hyprland.lua
+# 39. Apply hyprland.lua Revision 2
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 2" ~/.config/hypr/hyprland.lua
 
 # 40. cd ~/.config/hypr/configs
 cd ~/.config/hypr/configs || exit
@@ -135,10 +134,10 @@ cd ~/.config/hypr/configs || exit
 touch tags.lua
 
 # 42. apply tags.lua
-cp "$REPO_DIR/hypr/configs/tags.lua" tags.lua
+cp "$HOME/hyprland-rice/hypr/configs/tags.lua" tags.lua
 
 # 43. apply hyprland.lua revision 3
-cp "$REPO_DIR/Hyprland.lua/Revision 3" ~/.config/hypr/Hyprland.lua
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 3" ~/.config/hypr/hyprland.lua
 
 # 44. cd ~/.config/hypr/scripts/
 cd ~/.config/hypr/scripts/ || exit
@@ -147,19 +146,19 @@ cd ~/.config/hypr/scripts/ || exit
 touch hyprlock.sh
 
 # 46. apply hyprlock.sh
-cp "$REPO_DIR/hypr/scripts/hyprlock.sh" hyprlock.sh
+cp "$HOME/hyprland-rice/hypr/scripts/hyprlock.sh" hyprlock.sh
 
 # 47. chmod +x hyprlock.sh
 chmod +x hyprlock.sh
 
 # 48. sudo pacman -S zsh
-sudo pacman -S zsh
+sudo pacman -S zsh --noconfirm
 
 # 49. yay -S snappy-switcher(clean build not required)
-yay -S snappy-switcher
+yay -S snappy-switcher --noconfirm --answerclean no --answerdiff none
 
 # 50. apply hyprland revision 4
-cp "$REPO_DIR/Hyprland.lua/Revision 4" ~/.config/hypr/Hyprland.lua
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 4" ~/.config/hypr/hyprland.lua
 
 # 51. cd ~/.config/
 cd ~/.config/ || exit
@@ -172,7 +171,7 @@ cd snappy-switcher || exit
 
 # 54. touch config.ini
 touch config.ini
-cp "$REPO_DIR/snappy-switcher/config.ini" config.ini
+cp "$HOME/hyprland-rice/snappy-switcher/config.ini" config.ini
 
 # 55. touch ~/.config/hypr/scripts/wppicker.sh
 touch ~/.config/hypr/scripts/wppicker.sh
@@ -181,12 +180,12 @@ touch ~/.config/hypr/scripts/wppicker.sh
 chmod +x ~/.config/hypr/scripts/wppicker.sh
 
 # 57. apply wppicker.sh
-cp "$REPO_DIR/hypr/scripts/wppicker.sh" ~/.config/hypr/scripts/wppicker.sh
+cp "$HOME/hyprland-rice/hypr/scripts/wppicker.sh" ~/.config/hypr/scripts/wppicker.sh
 
 # 58. {add wallpapers to Pictures/wallpapers/ directory}
 echo "Automating Step 58: Copying wallpapers..."
 mkdir -p ~/Pictures/wallpapers/
-cp -r "$REPO_DIR/wallpapers/"* ~/Pictures/wallpapers/
+cp -r "$HOME/hyprland-rice/wallpapers/"* ~/Pictures/wallpapers/
 
 # 59. cd ~/.config/
 cd ~/.config/ || exit
@@ -201,10 +200,10 @@ cd rofi || exit
 touch config.rasi
 
 # 63. apply config.rasi
-cp "$REPO_DIR/rofi/config.rasi" config.rasi
+cp "$HOME/hyprland-rice/rofi/config.rasi" config.rasi
 
 # 64. sudo pacman -S swaync
-sudo pacman -S swaync
+sudo pacman -S swaync --noconfirm
 
 # 65. cd ~/.config/hypr/scripts/
 cd ~/.config/hypr/scripts/ || exit
@@ -213,7 +212,7 @@ cd ~/.config/hypr/scripts/ || exit
 touch wbrestart.sh
 
 # 67. apply wbrestart.sh
-cp "$REPO_DIR/hypr/scripts/wbrestart.sh" wbrestart.sh
+cp "$HOME/hyprland-rice/hypr/scripts/wbrestart.sh" wbrestart.sh
 
 # 68. chmod +x wbrestart.sh
 chmod +x wbrestart.sh
@@ -228,7 +227,7 @@ touch KillActiveProcess.sh
 chmod +x KillActiveProcess.sh
 
 # 72. apply KillActiveProcess.sh
-cp "$REPO_DIR/hypr/scripts/KillActiveProcess.sh" KillActiveProcess.sh
+cp "$HOME/hyprland-rice/hypr/scripts/KillActiveProcess.sh" KillActiveProcess.sh
 
 # 73. cd ~/.config/
 cd ~/.config/ || exit
@@ -240,7 +239,7 @@ mkdir waybar
 cd waybar || exit
 
 # 76. yay -S python-pywalfox
-yay -S python-pywalfox
+yay -S python-pywalfox --noconfirm --answerclean no --answerdiff none
 
 # 77. {Install Pywalfox Extension...}
 prompt_user "STEP 77:\nInstall the Pywalfox Extension in Firefox, open it and try to fetch colors [it wont work but attempt is mandatory]."
@@ -258,16 +257,16 @@ cd configs || exit
 touch taskbar "window middle"
 
 # 87. Apply all files respectivly...
-cp "$REPO_DIR/Waybar/Modules" ../Modules
-cp "$REPO_DIR/Waybar/ModulesCustom" ../ModulesCustom
-cp "$REPO_DIR/Waybar/ModulesGroups" ../ModulesGroups
-cp "$REPO_DIR/Waybar/ModulesWorkspaces" ../ModulesWorkspaces
-cp "$REPO_DIR/Waybar/style.css" ../style.css
-cp "$REPO_DIR/Waybar/configs/taskbar" ./taskbar
-cp "$REPO_DIR/Waybar/configs/window middle" "./window middle"
+cp "$HOME/hyprland-rice/Waybar/Modules" ../Modules
+cp "$HOME/hyprland-rice/Waybar/ModulesCustom" ../ModulesCustom
+cp "$HOME/hyprland-rice/Waybar/ModulesGroups" ../ModulesGroups
+cp "$HOME/hyprland-rice/Waybar/ModulesWorkspaces" ../ModulesWorkspaces
+cp "$HOME/hyprland-rice/Waybar/style.css" ../style.css
+cp "$HOME/hyprland-rice/Waybar/configs/taskbar" ./taskbar
+cp "$HOME/hyprland-rice/Waybar/configs/window middle" "./window middle"
 
 # 88. Apply Keybinds Revision at ~/.config/hypr/configs/keybinds.lua4
-cp "$REPO_DIR/hypr/configs/keybinds" ~/.config/hypr/configs/keybinds.lua4
+cp "$HOME/hyprland-rice/hypr/configs/keybinds" ~/.config/hypr/configs/keybinds.lua4
 
 # 89. cd ~/.config/kitty
 mkdir -p ~/.config/kitty
@@ -277,13 +276,13 @@ cd ~/.config/kitty || exit
 touch kitty.conf
 
 # 91. Apply kitty.conf
-cp "$REPO_DIR/kitty/kitty.conf" kitty.conf
+cp "$HOME/hyprland-rice/kitty/kitty.conf" kitty.conf
 
 # 92. cd..
 cd .. || exit
 
 # 93. sudo pacman -S cava
-sudo pacman -S cava
+sudo pacman -S cava --noconfirm
 
 # 94. mkdir cava
 mkdir cava
@@ -295,12 +294,13 @@ cd cava || exit
 touch config
 
 # 97. apply config
-cp "$REPO_DIR/cava/config" config
+cp "$HOME/hyprland-rice/cava/config" config
 
 # 98. cava {after 5 seconds close the terminal}
 echo "Automating Step 98: Initializing Cava for 5 seconds..."
 timeout 5 cava
 stty sane || reset
+
 
 # 99. mkdir ~/.cache/wal/
 mkdir -p ~/.cache/wal/
@@ -313,10 +313,10 @@ cd ~/.config/gtk-3.0/ || exit
 touch settings.ini
 
 # 102. apply settings.ini
-cp "$REPO_DIR/gtk-3.0/settings.ini" settings.ini
+cp "$HOME/hyprland-rice/gtk-3.0/settings.ini" settings.ini
 
 # 103. yay -S ttf-google-sans
-yay -S ttf-google-sans
+yay -S ttf-google-sans --noconfirm --answerclean no --answerdiff none
 
 # 104. cd..
 cd .. || exit
@@ -361,15 +361,15 @@ cd templates || exit
 touch colors.css kitty-colors.conf hyprland-colors.conf rofi-colors.rasi matugen-cava pywalfox-colors.json gtk-colors.css qtct-colors.conf
 
 # 125. apply all files from 116 to 123
-cp "$REPO_DIR/Matugen/config.toml" ../config.toml
-cp "$REPO_DIR/Templates/colors.css" ./colors.css
-cp "$REPO_DIR/Templates/kitty-colors.conf" ./kitty-colors.conf
-cp "$REPO_DIR/Templates/hyprland-colors.conf" ./hyprland-colors.conf
-cp "$REPO_DIR/Templates/rofi-colors.rasi" ./rofi-colors.rasi
-cp "$REPO_DIR/Templates/matugen-cava" ./matugen-cava
-cp "$REPO_DIR/Templates/pywalfox-colors.json" ./pywalfox-colors.json
-cp "$REPO_DIR/Templates/gtk-colors.css" ./gtk-colors.css
-cp "$REPO_DIR/Templates/qtct-colors.conf" ./qtct-colors.conf
+cp "$HOME/hyprland-rice/Matugen/config.toml" ../config.toml
+cp "$HOME/hyprland-rice/Templates/colors.css" ./colors.css
+cp "$HOME/hyprland-rice/Templates/kitty-colors.conf" ./kitty-colors.conf
+cp "$HOME/hyprland-rice/Templates/hyprland-colors.conf" ./hyprland-colors.conf
+cp "$HOME/hyprland-rice/Templates/rofi-colors.rasi" ./rofi-colors.rasi
+cp "$HOME/hyprland-rice/Templates/matugen-cava" ./matugen-cava
+cp "$HOME/hyprland-rice/Templates/pywalfox-colors.json" ./pywalfox-colors.json
+cp "$HOME/hyprland-rice/Templates/gtk-colors.css" ./gtk-colors.css
+cp "$HOME/hyprland-rice/Templates/qtct-colors.conf" ./qtct-colors.conf
 
 # 126. cd ~/.config/hypr/scripts/
 cd ~/.config/hypr/scripts/ || exit
@@ -378,16 +378,16 @@ cd ~/.config/hypr/scripts/ || exit
 touch WaybarLayout.sh
 
 # 128. apply WaybarLayout.sh
-cp "$REPO_DIR/hypr/scripts/WaybarLayout.sh" WaybarLayout.sh
+cp "$HOME/hyprland-rice/hypr/scripts/WaybarLayout.sh" WaybarLayout.sh
 
 # 129. chmod +x WaybarLayout.sh
 chmod +x WaybarLayout.sh
 
 # 130. sudo pacman -S blueman
-sudo pacman -S blueman
+sudo pacman -S blueman --noconfirm
 
 # 131. sudo pacman -S otf-font-awesome ttf-font-awesome
-sudo pacman -S otf-font-awesome ttf-font-awesome
+sudo pacman -S otf-font-awesome ttf-font-awesome --noconfirm
 
 # 132. set -U fish_greeting ""
 fish -c 'set -U fish_greeting ""'
@@ -402,18 +402,18 @@ cd ~/.config/hypr/scripts/ || exit
 touch volume.sh brightness.sh
 
 # 137. apply volume&brightness.sh respectivly
-cp "$REPO_DIR/hypr/scripts/volume.sh" volume.sh
-cp "$REPO_DIR/hypr/scripts/brightness.sh" brightness.sh
+cp "$HOME/hyprland-rice/hypr/scripts/volume.sh" volume.sh
+cp "$HOME/hyprland-rice/hypr/scripts/brightness.sh" brightness.sh
 
 # 138, 139. chmod +x volume.sh, brightness.sh
 chmod +x volume.sh
 chmod +x brightness.sh
 
 # 140. sudo pacman -S pamixer
-sudo pacman -S pamixer
+sudo pacman -S pamixer --noconfirm
 
 # 141. sudo pacman -S ttf-jetbrains-mono-nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman -S ttf-jetbrains-mono-nerd --noconfirm
 
 # 142. sudo systemctl edit getty@tty1.service
 echo "Automating Step 142: Injecting TTY1 Auto-login for user $USER..."
@@ -424,10 +424,10 @@ echo -e "[Service]\nExecStart=\nExecStart=-/sbin/agetty --autologin $USER --nocl
 printf "\nif status is-login\n if test (tty) = \"/dev/tty1\"\n exec start-hyprland\n end\nend\n" >> ~/.config/fish/config.fish
 
 # 144. sudo pacman -S sof-firmware...
-sudo pacman -S sof-firmware alsa-firmware alsa-utils wireplumber pipewire-audio pipewire-alsa pipewire-pulse
+sudo pacman -S sof-firmware alsa-firmware alsa-utils wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm
 
 # Final Implied Step: Apply Revision 5 (Required for final setup)
-cp "$REPO_DIR/Hyprland.lua/Revision 5" ~/.config/hypr/Hyprland.lua
+cp "$HOME/hyprland-rice/hyprland.lua/Revision 5" ~/.config/hypr/hyprland.lua
 
 # 145. sudo reboot
 prompt_user "Script execution is 100% complete. Ready to reboot into your new setup?"
